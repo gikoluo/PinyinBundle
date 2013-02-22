@@ -1,11 +1,16 @@
 parameters:
-    giko.pinyin.class:        Giko\PinyinBundle\Pinyin\ChineseSpell
-    giko.pinyin.datapath:     @GikoPinyinBundle/Resources/data/
+    giko.pinyin.class:        Giko\PinyinBundle\Pinyin\Pinyin
+    giko.pinyin.datapath:     "%kernel.root_dir%/../vendor/giko/pinyin-bundle/Giko/PinyinBundle/Resources/data/pinyin.txt"
     
 services:
     giko.pinyin:
-        class:     "%giko.corp.class%"
+        class:     "%giko.pinyin.class%"
+        arguments:
+          - %giko.pinyin.datapath%
+    twig.extension.pinyin:
+        class: Giko\PinyinBundle\Twig\Extension\PinyinExtension
         arguments:
           - "@service_container"
-          - %giko.pinyin.datapath%
-          
+          - "@giko.pinyin"
+        tags:
+            - { name: twig.extension}          
