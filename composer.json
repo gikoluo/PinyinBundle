@@ -2,7 +2,7 @@
     "name": "giko/pinyin-bundle",
     "type": "symfony-bundle",
     "description": "Get the Pinyin from Chinese",
-    "keywords": ["Chinese, Pinyin"],
+    "keywords": ["Chinese", "Pinyin"],
     "homepage": "https://github.com/gikoluo/",
     "license": "MIT",
     "authors": [
