@@ -1,0 +1,11 @@
+parameters:
+    giko.pinyin.class:        Giko\PinyinBundle\Pinyin\ChineseSpell
+    giko.pinyin.datapath:     @GikoPinyinBundle/Resources/data/
+    
+services:
+    giko.pinyin:
+        class:     "%giko.corp.class%"
+        arguments:
+          - "@service_container"
+          - %giko.pinyin.datapath%
+          
